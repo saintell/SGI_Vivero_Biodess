@@ -1896,6 +1896,7 @@
                           <Component id="btnGuardarConductor" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDesactivarConductor" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3781,12 +3782,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tabbedUsuarios" alignment="0" pref="878" max="32767" attributes="0"/>
+                  <Component id="tabbedUsuarios" alignment="0" pref="1214" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="tabbedUsuarios" alignment="0" pref="644" max="32767" attributes="0"/>
+                  <Component id="tabbedUsuarios" alignment="0" pref="596" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -3851,7 +3852,7 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="btnMostrarContraseñaU" min="-2" pref="40" max="-2" attributes="0"/>
-                              <EmptySpace pref="160" max="32767" attributes="0"/>
+                              <EmptySpace pref="496" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -4229,7 +4230,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="25" max="32767" attributes="0"/>
+                              <EmptySpace pref="361" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

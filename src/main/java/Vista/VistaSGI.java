@@ -1919,7 +1919,8 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(btnLimpiarConductor)
                     .addComponent(btnEditarConductor)
                     .addComponent(btnGuardarConductor)
-                    .addComponent(btnDesactivarConductor)))
+                    .addComponent(btnDesactivarConductor))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         parent.add(GestionarConductores, "card4");
@@ -3049,7 +3050,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(txfContraseña))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnMostrarContraseñaU, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuarioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3374,7 +3375,7 @@ public class VistaSGI extends javax.swing.JFrame {
                                         .addComponent(jLabel64)))
                                 .addComponent(jLabel69)
                                 .addComponent(txfcontraseña_listarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(361, Short.MAX_VALUE))
         );
         ListarUsuarioLayout.setVerticalGroup(
             ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3437,11 +3438,11 @@ public class VistaSGI extends javax.swing.JFrame {
         GestionarUsuarios.setLayout(GestionarUsuariosLayout);
         GestionarUsuariosLayout.setHorizontalGroup(
             GestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE)
         );
         GestionarUsuariosLayout.setVerticalGroup(
             GestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
         );
 
         parent.add(GestionarUsuarios, "card5");
@@ -6908,6 +6909,10 @@ public class VistaSGI extends javax.swing.JFrame {
 
                         JOptionPane.showMessageDialog(null, "Ingrese un celular valido, por favor.");
 
+                    } else if (txfCelularProv.getText().length() == 0) {
+
+                        JOptionPane.showMessageDialog(null, "Llene todos los campos, por favor");
+
                     } else {
 
                         if (txfCorreoProv.getText().length() != 0 && !txfCorreoProv.getText().contains("@")) {
@@ -8185,7 +8190,10 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_txfBuscarConsultarReservasKeyReleased
 
     private void txfBuscarConsultarReservasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfBuscarConsultarReservasKeyTyped
-        // TODO add your handling code here:
+
+        if (txfBuscarConsultarReservas.getText().length() > 11) {
+            evt.consume();
+        }       
     }//GEN-LAST:event_txfBuscarConsultarReservasKeyTyped
 
     private void txfCodigoReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCodigoReservaActionPerformed
@@ -9739,6 +9747,9 @@ public class VistaSGI extends javax.swing.JFrame {
                     limpiarCUsuario();
                     limpiarTablaUsuarios();
                     txfBuscar.setText(null);
+                    desactivarCamposCUsuario();
+                    this.btnGuardarCU.setEnabled(false);
+                    this.btnEditarCU.setEnabled(true);
 
                 } else {
 
@@ -9769,6 +9780,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     limpiarConductor();
                     limpiarTablaConductores();
                     txfBuscarConductor.setText(null);
+                    btnRegistrarConductor.setEnabled(true);
 
                 } else {
 
@@ -10130,6 +10142,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Proveedor eliminado correctamente.");
                     limpiarProveedor();
                     limpiarTablaProveedor();
+                    btnRegistrarProv.setEnabled(true);
 
                 } else {
 
@@ -13208,7 +13221,7 @@ public class VistaSGI extends javax.swing.JFrame {
                 } else {
 
                     if (txfNitIngresarEspecie.getText().trim().length() == 0 || txfEspecie.getText().trim().length() == 0
-                            || txfCostoIngresarEspecie.getText().trim().length() == 0 || txfCantidadIngresarEspecie.getText().trim().length() == 0) {
+                            || txfCostoIngresarEspecie.getText().trim().length() == 0 || txfCantidadIngresarEspecie.getText().trim().length() == 0 || txfCostoCompra.getText().trim().length() == 0) {
 
                         JOptionPane.showMessageDialog(null, "Llene todos los campos, por favor.");
 
