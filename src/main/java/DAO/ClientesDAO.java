@@ -1,6 +1,7 @@
 package DAO;
 
 import Modelo.Cliente_;
+import Vista.VistaSGI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,7 +46,11 @@ public class ClientesDAO {
 
             if (e.getMessage().contains("duplicada")) {
 
-                JOptionPane.showMessageDialog(null, "Cliente ya creado, presione enter en el campo de identificación para buscarlo.");
+                if (!VistaSGI.GestionarClientes.isShowing()) {
+                    JOptionPane.showMessageDialog(null, "Cliente ya creado, presione enter en el campo de identificación para buscarlo.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "El cliente con ese NIT/Cédula ya existe, cree uno nuevo por favor.");
+                }
 
             }
             return false;

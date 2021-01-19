@@ -53,7 +53,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoBiodess - copia.png"))); // NOI18N
 
         txfUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        txfUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        txfUsuario.setForeground(new java.awt.Color(153, 153, 153));
         txfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfUsuario.setText("USUARIO");
         txfUsuario.setToolTipText("");
@@ -81,7 +81,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         txfContraseña.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txfContraseña.setForeground(new java.awt.Color(204, 204, 204));
+        txfContraseña.setForeground(new java.awt.Color(153, 153, 153));
         txfContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfContraseña.setText("•••••••••••••••");
         txfContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));

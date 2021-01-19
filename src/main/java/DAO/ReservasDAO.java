@@ -80,7 +80,7 @@ public class ReservasDAO {
                 + " tamaño_bolsa = '" + tamaño_bolsa + "' AND rango = '" + rango + "' AND codigo_ingreso = '" + codigo_ingreso + "'";
 
         try {
-                    
+
             PreparedStatement pst = cn.prepareStatement(sSql);
 
             int i = pst.executeUpdate();
@@ -233,9 +233,16 @@ public class ReservasDAO {
 
         };
 
-        sSql = "SELECT r.codigo_reserva, to_char(r.fecha_apertura, 'DD/MM/YYYY') AS fecha, c.nombre, r.id_cliente FROM reserva r, cliente c WHERE r.id_cliente = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null"
-                + " OR r.codigo_reserva != 0 AND r.codigo_reserva = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null GROUP BY r.codigo_reserva, r.fecha_apertura, c.nombre, r.id_cliente ORDER BY r.codigo_reserva ASC ";
+        if (busca.contains("-")) {
 
+            sSql = "SELECT r.codigo_reserva, to_char(r.fecha_apertura, 'DD/MM/YYYY') AS fecha, c.nombre, r.id_cliente FROM reserva r, cliente c WHERE r.id_cliente = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null"
+                    + " GROUP BY r.codigo_reserva, r.fecha_apertura, c.nombre, r.id_cliente ORDER BY r.codigo_reserva ASC";
+        } else {
+
+            sSql = "SELECT r.codigo_reserva, to_char(r.fecha_apertura, 'DD/MM/YYYY') AS fecha, c.nombre, r.id_cliente FROM reserva r, cliente c WHERE r.id_cliente = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null"
+                    + " OR r.codigo_reserva != 0 AND r.codigo_reserva = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null GROUP BY r.codigo_reserva, r.fecha_apertura, c.nombre, r.id_cliente ORDER BY r.codigo_reserva ASC";
+        }
+        
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sSql);
@@ -256,7 +263,7 @@ public class ReservasDAO {
             return null;
         }
     }
-    
+
     public DefaultTableModel mostrarCodigosReservasNIT(String busca) {
         DefaultTableModel modelo;
 
@@ -297,8 +304,8 @@ public class ReservasDAO {
             return null;
         }
     }
-    
-      public ResultSet contarReservas() throws SQLException {
+
+    public ResultSet contarReservas() throws SQLException {
         sSql = "SELECT COUNT(distinct codigo_reserva) FROM reserva WHERE codigo_reserva != 0 AND fecha_cierre IS NULL";
         st = cn.createStatement();
         rs = st.executeQuery(sSql);

@@ -259,7 +259,7 @@ public class VistaSGI extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         lblNumeroEspecie = new javax.swing.JLabel();
         btnQuitar3 = new javax.swing.JButton();
-        IngresarEspecie = new javax.swing.JPanel();
+        AlimentarInventario = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         txfEspecie = new javax.swing.JTextField();
@@ -1634,6 +1634,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEditarConductor.setBorderPainted(false);
         btnEditarConductor.setContentAreaFilled(false);
         btnEditarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarConductor.setFocusable(false);
         btnEditarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarConductor.addActionListener(new java.awt.event.ActionListener() {
@@ -1701,7 +1702,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfCelularConductor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfCelularConductor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txfCelularConductor.setNextFocusableComponent(btnRegistrarConductor);
+        txfCelularConductor.setNextFocusableComponent(txfBuscarConductor);
         txfCelularConductor.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfCelularConductorKeyReleased(evt);
@@ -1745,6 +1746,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarConductor.setBorderPainted(false);
         btnLimpiarConductor.setContentAreaFilled(false);
         btnLimpiarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarConductor.setFocusable(false);
         btnLimpiarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarConductor.addActionListener(new java.awt.event.ActionListener() {
@@ -1760,6 +1762,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnGuardarConductor.setContentAreaFilled(false);
         btnGuardarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarConductor.setEnabled(false);
+        btnGuardarConductor.setFocusable(false);
         btnGuardarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarConductor.addActionListener(new java.awt.event.ActionListener() {
@@ -1770,6 +1773,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         estadoComboConductor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         estadoComboConductor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVOS", "INACTIVOS" }));
+        estadoComboConductor.setNextFocusableComponent(txfCedulaConductor);
         estadoComboConductor.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 estadoComboConductorItemStateChanged(evt);
@@ -1785,6 +1789,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnDesactivarConductor.setBorderPainted(false);
         btnDesactivarConductor.setContentAreaFilled(false);
         btnDesactivarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDesactivarConductor.setFocusable(false);
         btnDesactivarConductor.setNextFocusableComponent(txfCedulaConductor);
         btnDesactivarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/desactivarRojoOscuro.png"))); // NOI18N
         btnDesactivarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/desactivarRojoOscuro.png"))); // NOI18N
@@ -1800,6 +1805,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnRegistrarConductor.setBorderPainted(false);
         btnRegistrarConductor.setContentAreaFilled(false);
         btnRegistrarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarConductor.setFocusable(false);
         btnRegistrarConductor.setNextFocusableComponent(txfBuscarConductor);
         btnRegistrarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnRegistrarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
@@ -1816,6 +1822,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEliminarConductor.setBorderPainted(false);
         btnEliminarConductor.setContentAreaFilled(false);
         btnEliminarConductor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarConductor.setFocusable(false);
         btnEliminarConductor.setNextFocusableComponent(btnLimpiarConductor);
         btnEliminarConductor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnEliminarConductor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -1920,7 +1927,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(btnEditarConductor)
                     .addComponent(btnGuardarConductor)
                     .addComponent(btnDesactivarConductor))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         parent.add(GestionarConductores, "card4");
@@ -1935,6 +1942,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEliminarProveedor.setBorderPainted(false);
         btnEliminarProveedor.setContentAreaFilled(false);
         btnEliminarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarProveedor.setFocusable(false);
         btnEliminarProveedor.setNextFocusableComponent(btnLimpiarProveedor);
         btnEliminarProveedor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnEliminarProveedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -1953,6 +1961,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEditarProveedor.setBorderPainted(false);
         btnEditarProveedor.setContentAreaFilled(false);
         btnEditarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarProveedor.setFocusable(false);
         btnEditarProveedor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarProveedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -2045,6 +2054,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfBuscarProv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfBuscarProv.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfBuscarProv.setNextFocusableComponent(txfNitProv);
         txfBuscarProv.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfBuscarProvKeyReleased(evt);
@@ -2060,6 +2070,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarProveedor.setBorderPainted(false);
         btnLimpiarProveedor.setContentAreaFilled(false);
         btnLimpiarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarProveedor.setFocusable(false);
         btnLimpiarProveedor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarProveedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -2075,6 +2086,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnGuardarProveedor.setContentAreaFilled(false);
         btnGuardarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarProveedor.setEnabled(false);
+        btnGuardarProveedor.setFocusable(false);
         btnGuardarProveedor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarProveedor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -2089,6 +2101,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnRegistrarProv.setBorderPainted(false);
         btnRegistrarProv.setContentAreaFilled(false);
         btnRegistrarProv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarProv.setFocusable(false);
         btnRegistrarProv.setNextFocusableComponent(txfNitProv);
         btnRegistrarProv.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnRegistrarProv.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
@@ -2116,7 +2129,7 @@ public class VistaSGI extends javax.swing.JFrame {
         GestionarProveedores.setLayout(GestionarProveedoresLayout);
         GestionarProveedoresLayout.setHorizontalGroup(
             GestionarProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE)
             .addGroup(GestionarProveedoresLayout.createSequentialGroup()
                 .addGroup(GestionarProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(GestionarProveedoresLayout.createSequentialGroup()
@@ -2148,7 +2161,7 @@ public class VistaSGI extends javax.swing.JFrame {
                                 .addGap(36, 36, 36)
                                 .addGroup(GestionarProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel90)
-                                    .addComponent(txfUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)))
+                                    .addComponent(txfUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)))
                             .addGroup(GestionarProveedoresLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(btnEliminarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2228,6 +2241,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEditarEsp.setBorderPainted(false);
         btnEditarEsp.setContentAreaFilled(false);
         btnEditarEsp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarEsp.setFocusable(false);
         btnEditarEsp.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarEsp.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarEsp.addActionListener(new java.awt.event.ActionListener() {
@@ -2340,6 +2354,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfBuscarEsp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfBuscarEsp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfBuscarEsp.setNextFocusableComponent(txfNombreCien);
         txfBuscarEsp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfBuscarEspKeyReleased(evt);
@@ -2355,6 +2370,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarEsp.setBorderPainted(false);
         btnLimpiarEsp.setContentAreaFilled(false);
         btnLimpiarEsp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarEsp.setFocusable(false);
         btnLimpiarEsp.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarEsp.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarEsp.addActionListener(new java.awt.event.ActionListener() {
@@ -2370,6 +2386,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnGuardarEsp.setContentAreaFilled(false);
         btnGuardarEsp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarEsp.setEnabled(false);
+        btnGuardarEsp.setFocusable(false);
         btnGuardarEsp.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarEsp.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarEsp.addActionListener(new java.awt.event.ActionListener() {
@@ -2384,6 +2401,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnRegistrarEsp.setBorderPainted(false);
         btnRegistrarEsp.setContentAreaFilled(false);
         btnRegistrarEsp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarEsp.setFocusable(false);
         btnRegistrarEsp.setNextFocusableComponent(txfNombreCien);
         btnRegistrarEsp.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnRegistrarEsp.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
@@ -2405,6 +2423,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnQuitar3.setBorderPainted(false);
         btnQuitar3.setContentAreaFilled(false);
         btnQuitar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnQuitar3.setFocusable(false);
         btnQuitar3.setNextFocusableComponent(btnLimpiarEsp);
         btnQuitar3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnQuitar3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -2513,11 +2532,11 @@ public class VistaSGI extends javax.swing.JFrame {
 
         parent.add(GestionarEspecies, "card4");
 
-        IngresarEspecie.setBackground(new java.awt.Color(255, 255, 255));
-        IngresarEspecie.setPreferredSize(new java.awt.Dimension(1214, 460));
+        AlimentarInventario.setBackground(new java.awt.Color(255, 255, 255));
+        AlimentarInventario.setPreferredSize(new java.awt.Dimension(1214, 460));
 
         jLabel41.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel41.setText("INGRESAR ESPECIE");
+        jLabel41.setText("ALIMENTAR INVENTARIO");
 
         jLabel83.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel83.setText("Especie:");
@@ -2572,6 +2591,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarProveedor1.setBorderPainted(false);
         btnLimpiarProveedor1.setContentAreaFilled(false);
         btnLimpiarProveedor1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarProveedor1.setFocusable(false);
         btnLimpiarProveedor1.setNextFocusableComponent(btnSeleccionarProveedor);
         btnLimpiarProveedor1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarProveedor1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
@@ -2587,6 +2607,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnIngresarEspecie.setBorderPainted(false);
         btnIngresarEspecie.setContentAreaFilled(false);
         btnIngresarEspecie.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIngresarEspecie.setFocusable(false);
         btnIngresarEspecie.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnIngresarEspecie.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnIngresarEspecie.addActionListener(new java.awt.event.ActionListener() {
@@ -2644,6 +2665,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarProveedor2.setBorderPainted(false);
         btnLimpiarProveedor2.setContentAreaFilled(false);
         btnLimpiarProveedor2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarProveedor2.setFocusable(false);
         btnLimpiarProveedor2.setNextFocusableComponent(btnIngresarEspecie);
         btnLimpiarProveedor2.setPreferredSize(new java.awt.Dimension(65, 49));
         btnLimpiarProveedor2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/buscar2.png"))); // NOI18N
@@ -2659,6 +2681,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         fechaIngreso.setDateFormatString("dd-MM-yyyy");
         fechaIngreso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        fechaIngreso.setNextFocusableComponent(txfBuscarEspecie);
         fechaIngreso.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 fechaIngresoKeyTyped(evt);
@@ -2679,6 +2702,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         fechaHasta.setDateFormatString("dd-MM-yyyy");
         fechaHasta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        fechaHasta.setNextFocusableComponent(btnSeleccionarProveedor);
 
         jLabel92.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel92.setText("Cantidad:");
@@ -2743,153 +2767,153 @@ public class VistaSGI extends javax.swing.JFrame {
         ));
         jScrollPane13.setViewportView(historialRegistros);
 
-        javax.swing.GroupLayout IngresarEspecieLayout = new javax.swing.GroupLayout(IngresarEspecie);
-        IngresarEspecie.setLayout(IngresarEspecieLayout);
-        IngresarEspecieLayout.setHorizontalGroup(
-            IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
+        javax.swing.GroupLayout AlimentarInventarioLayout = new javax.swing.GroupLayout(AlimentarInventario);
+        AlimentarInventario.setLayout(AlimentarInventarioLayout);
+        AlimentarInventarioLayout.setHorizontalGroup(
+            AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                                         .addComponent(jLabel86)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnSeleccionarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(txfNitIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(30, 30, 30)
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txfCantidadIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                                    .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                                             .addGap(1, 1, 1)
                                             .addComponent(jLabel83)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnSeleccionarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(txfEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(30, 30, 30)
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel84)
-                                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel91, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(tamanoCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(30, 30, 30)
-                                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jLabel93)
                                             .addComponent(rangoCombo, 0, 130, Short.MAX_VALUE)))
                                     .addComponent(fechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(30, 30, 30)
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txfCostoIngresarEspecie)))
-                            .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txfBuscarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txfCostoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel94)
                                     .addComponent(jLabel88))
                                 .addGap(30, 30, 30)
-                                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel92)
-                                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel87)
                                             .addComponent(fechaDesde, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(30, 30, 30)
-                                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel89)
-                                            .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                                            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                                                 .addComponent(fechaHasta, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(btnLimpiarProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                                 .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(322, 322, 322)
+                                .addGap(297, 297, 297)
                                 .addComponent(jLabel41))
                             .addComponent(jScrollPane13)))
-                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                        .addGap(332, 332, 332)
+                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                        .addGap(333, 333, 333)
                         .addComponent(btnIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(btnLimpiarProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(361, Short.MAX_VALUE))
         );
-        IngresarEspecieLayout.setVerticalGroup(
-            IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IngresarEspecieLayout.createSequentialGroup()
+        AlimentarInventarioLayout.setVerticalGroup(
+            AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel41)
                     .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
-                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
+                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSeleccionarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txfNitIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
                         .addComponent(jLabel91)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tamanoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
-                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
+                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSeleccionarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txfEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
                         .addComponent(jLabel93)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rangoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
                         .addComponent(jLabel85)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txfCostoIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(13, 13, 13)
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresarEspecieLayout.createSequentialGroup()
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlimentarInventarioLayout.createSequentialGroup()
                             .addComponent(jLabel84)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(fechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                        .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                             .addComponent(jLabel92)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txfCantidadIngresarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                         .addComponent(jLabel94)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txfCostoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
-                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
+                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel87)
                             .addComponent(jLabel89)
                             .addComponent(jLabel88))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(fechaHasta, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                             .addComponent(fechaDesde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLimpiarProveedor2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                    .addGroup(IngresarEspecieLayout.createSequentialGroup()
+                    .addGroup(AlimentarInventarioLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(txfBuscarEspecie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(IngresarEspecieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(AlimentarInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnLimpiarProveedor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnIngresarEspecie, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        parent.add(IngresarEspecie, "card4");
+        parent.add(AlimentarInventario, "card4");
 
         GestionarUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         GestionarUsuarios.setForeground(new java.awt.Color(255, 153, 51));
@@ -2918,6 +2942,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnMostrarContraseñaU.setBorderPainted(false);
         btnMostrarContraseñaU.setContentAreaFilled(false);
         btnMostrarContraseñaU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMostrarContraseñaU.setFocusable(false);
         btnMostrarContraseñaU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarContraseñaUActionPerformed(evt);
@@ -2986,6 +3011,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnCrearUsuario.setBorderPainted(false);
         btnCrearUsuario.setContentAreaFilled(false);
         btnCrearUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearUsuario.setFocusable(false);
         btnCrearUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnCrearUsuario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -3005,6 +3031,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarProveedor3.setBorderPainted(false);
         btnLimpiarProveedor3.setContentAreaFilled(false);
         btnLimpiarProveedor3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarProveedor3.setFocusable(false);
         btnLimpiarProveedor3.setNextFocusableComponent(txfUsuario);
         btnLimpiarProveedor3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarProveedor3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
@@ -3016,6 +3043,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfContraseña.setNextFocusableComponent(txfUsuario);
         txfContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txfContraseñaKeyTyped(evt);
@@ -3027,36 +3055,37 @@ public class VistaSGI extends javax.swing.JFrame {
         CrearUsuarioLayout.setHorizontalGroup(
             CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CrearUsuarioLayout.createSequentialGroup()
-                .addGap(247, 247, 247)
                 .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23))
-                .addGap(18, 18, 18)
-                .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(passInput1, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
-                    .addComponent(txfDireccion)
-                    .addComponent(txfCelular)
-                    .addComponent(txfApellido)
-                    .addComponent(txfNombre)
-                    .addComponent(txfUsuario)
                     .addGroup(CrearUsuarioLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel15))
-                    .addComponent(txfContraseña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMostrarContraseñaU, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(496, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearUsuarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btnLimpiarProveedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(233, 233, 233))
+                        .addGap(247, 247, 247)
+                        .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23))
+                        .addGap(18, 18, 18)
+                        .addGroup(CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(passInput1, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                            .addComponent(txfDireccion)
+                            .addComponent(txfCelular)
+                            .addComponent(txfApellido)
+                            .addComponent(txfNombre)
+                            .addComponent(txfUsuario)
+                            .addGroup(CrearUsuarioLayout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel15))
+                            .addComponent(txfContraseña))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnMostrarContraseñaU, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(CrearUsuarioLayout.createSequentialGroup()
+                        .addGap(413, 413, 413)
+                        .addComponent(btnCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnLimpiarProveedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         CrearUsuarioLayout.setVerticalGroup(
             CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3113,6 +3142,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEditarCU.setBorderPainted(false);
         btnEditarCU.setContentAreaFilled(false);
         btnEditarCU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarCU.setFocusable(false);
         btnEditarCU.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarCU.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarCU.addActionListener(new java.awt.event.ActionListener() {
@@ -3134,6 +3164,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         estadoComboCU.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         estadoComboCU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVOS", "INACTIVOS" }));
+        estadoComboCU.setNextFocusableComponent(txfUsuario1);
         estadoComboCU.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 estadoComboCUItemStateChanged(evt);
@@ -3245,6 +3276,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiar.setBorderPainted(false);
         btnLimpiar.setContentAreaFilled(false);
         btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiar.setFocusable(false);
         btnLimpiar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -3260,6 +3292,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnGuardarCU.setContentAreaFilled(false);
         btnGuardarCU.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarCU.setEnabled(false);
+        btnGuardarCU.setFocusable(false);
         btnGuardarCU.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarCU.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarCU.addActionListener(new java.awt.event.ActionListener() {
@@ -3278,6 +3311,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEliminarUsuario.setBorderPainted(false);
         btnEliminarUsuario.setContentAreaFilled(false);
         btnEliminarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarUsuario.setFocusable(false);
         btnEliminarUsuario.setNextFocusableComponent(btnLimpiar);
         btnEliminarUsuario.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnEliminarUsuario.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -3293,6 +3327,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnDesactivar.setBorderPainted(false);
         btnDesactivar.setContentAreaFilled(false);
         btnDesactivar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDesactivar.setFocusable(false);
         btnDesactivar.setNextFocusableComponent(txfUsuario1);
         btnDesactivar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/desactivarRojoOscuro.png"))); // NOI18N
         btnDesactivar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/desactivarRojoOscuro.png"))); // NOI18N
@@ -3375,7 +3410,7 @@ public class VistaSGI extends javax.swing.JFrame {
                                         .addComponent(jLabel64)))
                                 .addComponent(jLabel69)
                                 .addComponent(txfcontraseña_listarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         ListarUsuarioLayout.setVerticalGroup(
             ListarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3438,11 +3473,11 @@ public class VistaSGI extends javax.swing.JFrame {
         GestionarUsuarios.setLayout(GestionarUsuariosLayout);
         GestionarUsuariosLayout.setHorizontalGroup(
             GestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE)
+            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)
         );
         GestionarUsuariosLayout.setVerticalGroup(
             GestionarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+            .addComponent(tabbedUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
 
         parent.add(GestionarUsuarios, "card5");
@@ -3495,6 +3530,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfBuscarInventario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfBuscarInventario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfBuscarInventario.setNextFocusableComponent(txfBuscarInventario);
         txfBuscarInventario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfBuscarInventarioKeyReleased(evt);
@@ -3523,7 +3559,7 @@ public class VistaSGI extends javax.swing.JFrame {
         Inventario.setLayout(InventarioLayout);
         InventarioLayout.setHorizontalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1214, Short.MAX_VALUE)
             .addGroup(InventarioLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3538,7 +3574,7 @@ public class VistaSGI extends javax.swing.JFrame {
                         .addComponent(btnEditarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnDescargar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 326, Short.MAX_VALUE))
+                .addGap(0, 662, Short.MAX_VALUE))
         );
         InventarioLayout.setVerticalGroup(
             InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3658,6 +3694,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfTelefonoReservas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfTelefonoReservas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfTelefonoReservas.setNextFocusableComponent(btnSeleccionarEspecieReservas);
         txfTelefonoReservas.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfTelefonoReservasKeyReleased(evt);
@@ -3706,7 +3743,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnSeleccionarEspecieReservas.setBorderPainted(false);
         btnSeleccionarEspecieReservas.setEnabled(false);
         btnSeleccionarEspecieReservas.setFocusPainted(false);
-        btnSeleccionarEspecieReservas.setNextFocusableComponent(btnQuitar);
+        btnSeleccionarEspecieReservas.setNextFocusableComponent(IdentificacionCombo);
         btnSeleccionarEspecieReservas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarEspecieReservasActionPerformed(evt);
@@ -3731,6 +3768,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnQuitar.setBorderPainted(false);
         btnQuitar.setContentAreaFilled(false);
         btnQuitar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnQuitar.setFocusable(false);
         btnQuitar.setNextFocusableComponent(IdentificacionCombo);
         btnQuitar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnQuitar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -3761,6 +3799,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnNuevoCliente.setBorderPainted(false);
         btnNuevoCliente.setContentAreaFilled(false);
         btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNuevoCliente.setFocusable(false);
         btnNuevoCliente.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/add-group.png"))); // NOI18N
         btnNuevoCliente.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/add-group.png"))); // NOI18N
         btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -3943,7 +3982,7 @@ public class VistaSGI extends javax.swing.JFrame {
         txfBuscarConsultarReservas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfBuscarConsultarReservas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfBuscarConsultarReservas.setToolTipText("Busque por NIT, Cédula o Código de reserva, y presione ENTER.");
-        txfBuscarConsultarReservas.setNextFocusableComponent(btnSeleccionarEspecieReservas4);
+        txfBuscarConsultarReservas.setNextFocusableComponent(txfCodigoReserva);
         txfBuscarConsultarReservas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txfBuscarConsultarReservasActionPerformed(evt);
@@ -4067,6 +4106,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarConsultarReservas.setBorderPainted(false);
         btnLimpiarConsultarReservas.setContentAreaFilled(false);
         btnLimpiarConsultarReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarConsultarReservas.setFocusable(false);
         btnLimpiarConsultarReservas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarConsultarReservas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarConsultarReservas.addActionListener(new java.awt.event.ActionListener() {
@@ -4081,6 +4121,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnCancelarConsultarReservas.setBorderPainted(false);
         btnCancelarConsultarReservas.setContentAreaFilled(false);
         btnCancelarConsultarReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelarConsultarReservas.setFocusable(false);
         btnCancelarConsultarReservas.setNextFocusableComponent(txfBuscarConsultarReservas);
         btnCancelarConsultarReservas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/btnCancelarRojoOscuro.png"))); // NOI18N
         btnCancelarConsultarReservas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/btnCancelarRojoOscuro.png"))); // NOI18N
@@ -4096,6 +4137,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnQuitarConsultarReservas.setBorderPainted(false);
         btnQuitarConsultarReservas.setContentAreaFilled(false);
         btnQuitarConsultarReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnQuitarConsultarReservas.setFocusable(false);
         btnQuitarConsultarReservas.setNextFocusableComponent(btnLimpiarConsultarReservas);
         btnQuitarConsultarReservas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnQuitarConsultarReservas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -4111,6 +4153,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnAgregarConsultarReservas.setBorderPainted(false);
         btnAgregarConsultarReservas.setContentAreaFilled(false);
         btnAgregarConsultarReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarConsultarReservas.setFocusable(false);
         btnAgregarConsultarReservas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar2.png"))); // NOI18N
         btnAgregarConsultarReservas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Agregar2.png"))); // NOI18N
         btnAgregarConsultarReservas.addActionListener(new java.awt.event.ActionListener() {
@@ -4125,6 +4168,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnSeleccionarEspecieReservas4.setBorderPainted(false);
         btnSeleccionarEspecieReservas4.setContentAreaFilled(false);
         btnSeleccionarEspecieReservas4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSeleccionarEspecieReservas4.setFocusable(false);
         btnSeleccionarEspecieReservas4.setNextFocusableComponent(btnAgregarConsultarReservas);
         btnSeleccionarEspecieReservas4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/buscar2.png"))); // NOI18N
         btnSeleccionarEspecieReservas4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/buscar2.png"))); // NOI18N
@@ -4460,7 +4504,7 @@ public class VistaSGI extends javax.swing.JFrame {
                 .addGroup(InfoSalidaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txfPredio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(InfoSalidaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InfoSalidaPanelLayout.createSequentialGroup()
                         .addComponent(btnSiguienteInfoSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4474,7 +4518,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(jLabel112)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(motivoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(72, Short.MAX_VALUE)))
+                    .addContainerGap(69, Short.MAX_VALUE)))
         );
 
         slidePanel.add(InfoSalidaPanel, "card2");
@@ -4690,7 +4734,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(btnAnteriorConductor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAnteriorConductor1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiarConductorSalidas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         slidePanel.add(ConductorPanel, "card3");
@@ -4894,7 +4938,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(btnAnteriorCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiarClienteSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         slidePanel.add(ClientePanel, "card3");
@@ -5047,7 +5091,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addGroup(VentaPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnQuitar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 26, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(VentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAnteriorConductor3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(VentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5212,7 +5256,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addComponent(btnAnteriorCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAnteriorConductor4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpiarInfPerdida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         slidePanel.add(PerdidaPanel, "card3");
@@ -5414,7 +5458,7 @@ public class VistaSGI extends javax.swing.JFrame {
                             .addComponent(btnAnteriorCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAnteriorConductor5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnLimpiarInfTrasplantado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         slidePanel.add(TrasplantadoPanel, "card3");
@@ -5730,6 +5774,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEditarCliente.setBorderPainted(false);
         btnEditarCliente.setContentAreaFilled(false);
         btnEditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEditarCliente.setFocusable(false);
         btnEditarCliente.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarCliente.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/editarAzulOscuro.png"))); // NOI18N
         btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -5745,6 +5790,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnEliminarCliente.setBorderPainted(false);
         btnEliminarCliente.setContentAreaFilled(false);
         btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarCliente.setFocusable(false);
         btnEliminarCliente.setNextFocusableComponent(btnLimpiarClientes);
         btnEliminarCliente.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
         btnEliminarCliente.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Quitar2.0.png"))); // NOI18N
@@ -5842,6 +5888,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         txfBuscarCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txfBuscarCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfBuscarCliente.setNextFocusableComponent(TipoComboClientes);
         txfBuscarCliente.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txfBuscarClienteKeyReleased(evt);
@@ -5857,6 +5904,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnLimpiarClientes.setBorderPainted(false);
         btnLimpiarClientes.setContentAreaFilled(false);
         btnLimpiarClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarClientes.setFocusable(false);
         btnLimpiarClientes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarClientes.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/limpiarAzulOscuro.png"))); // NOI18N
         btnLimpiarClientes.addActionListener(new java.awt.event.ActionListener() {
@@ -5872,6 +5920,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnGuardarCliente.setContentAreaFilled(false);
         btnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarCliente.setEnabled(false);
+        btnGuardarCliente.setFocusable(false);
         btnGuardarCliente.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarCliente.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/guardarAzulOscuro.png"))); // NOI18N
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -5886,6 +5935,7 @@ public class VistaSGI extends javax.swing.JFrame {
         btnRegistrarCliente.setBorderPainted(false);
         btnRegistrarCliente.setContentAreaFilled(false);
         btnRegistrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarCliente.setFocusable(false);
         btnRegistrarCliente.setNextFocusableComponent(TipoComboClientes);
         btnRegistrarCliente.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
         btnRegistrarCliente.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/registrarAzulOscuro.png"))); // NOI18N
@@ -5947,7 +5997,7 @@ public class VistaSGI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GestionarClientesLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
         GestionarClientesLayout.setVerticalGroup(
             GestionarClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5987,7 +6037,7 @@ public class VistaSGI extends javax.swing.JFrame {
                         .addComponent(btnLimpiarClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRegistrarCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(btnEditarCliente))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         parent.add(GestionarClientes, "card4");
@@ -7029,7 +7079,7 @@ public class VistaSGI extends javax.swing.JFrame {
                 ind_5.setOpaque(true);
                 resetColor(new JPanel[]{btn_1, btn_2, btn_3, btn_4, btn_6, btn_7, btn_8, btn_10, btn_11}, new JPanel[]{ind_1, ind_2, ind_3, ind_4, ind_6, ind_7, ind_8, ind_10, ind_11});
                 parent.removeAll();
-                parent.add(IngresarEspecie);
+                parent.add(AlimentarInventario);
                 parent.repaint();
                 parent.revalidate();
                 java.util.Date fechaParseada = new SimpleDateFormat("dd/MM/yyyy").parse(fechaActual());
@@ -7054,7 +7104,7 @@ public class VistaSGI extends javax.swing.JFrame {
                 ind_5.setOpaque(true);
                 resetColor(new JPanel[]{btn_1, btn_2, btn_3, btn_4, btn_6, btn_7, btn_8, btn_10, btn_11}, new JPanel[]{ind_1, ind_2, ind_3, ind_4, ind_6, ind_7, ind_8, ind_10, ind_11});
                 parent.removeAll();
-                parent.add(IngresarEspecie);
+                parent.add(AlimentarInventario);
                 parent.repaint();
                 parent.revalidate();
                 java.util.Date fechaParseada = new SimpleDateFormat("dd/MM/yyyy").parse(fechaActual());
@@ -8193,7 +8243,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
         if (txfBuscarConsultarReservas.getText().length() > 11) {
             evt.consume();
-        }       
+        }
     }//GEN-LAST:event_txfBuscarConsultarReservasKeyTyped
 
     private void txfCodigoReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCodigoReservaActionPerformed
@@ -8569,11 +8619,11 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_txfBuscarConsultarSalidaKeyReleased
 
     private void txfBuscarConsultarSalidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfBuscarConsultarSalidaKeyTyped
-        if (txfBuscarConsultarSalida.getText().length() > 13) {
+        if (txfBuscarConsultarSalida.getText().length() > 11) {
 
             evt.consume();
 
-        }        // TODO add your handling code here:
+        }       
     }//GEN-LAST:event_txfBuscarConsultarSalidaKeyTyped
 
     private void tablaConsultarSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaConsultarSalidasMouseClicked
@@ -8998,6 +9048,14 @@ public class VistaSGI extends javax.swing.JFrame {
             rangoComboTrasplantado.removeAllItems();
             rangoComboTrasplantado.addItem("< 60 cm");
             rangoComboTrasplantado.addItem("60 - 100 cm");
+            rangoComboTrasplantado.addItem("100 - 150 cm");
+            rangoComboTrasplantado.addItem("> 150 cm");
+            rangoComboTrasplantado.setSelectedIndex(0);
+
+        }
+        else if (tamanoComboTrasplantado.getSelectedIndex() == 2) {
+
+            rangoComboTrasplantado.removeAllItems();
             rangoComboTrasplantado.addItem("100 - 150 cm");
             rangoComboTrasplantado.addItem("> 150 cm");
             rangoComboTrasplantado.setSelectedIndex(0);
@@ -9647,7 +9705,7 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_5MouseEntered
 
     private void btn_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_5MouseExited
-        if (!IngresarEspecie.isShowing()) {
+        if (!AlimentarInventario.isShowing()) {
             resetColor1(btn_5);
             ind_5.setOpaque(false);
         }
@@ -9943,7 +10001,7 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_tablaClientesKeyReleased
 
     private void txfNombreClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfNombreClientesActionPerformed
-        // TODO add your handling code here:
+        registrarCliente();
     }//GEN-LAST:event_txfNombreClientesActionPerformed
 
     private void txfNombreClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfNombreClientesKeyReleased
@@ -9973,7 +10031,7 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_txfNombreClientesKeyTyped
 
     private void txfCelularClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCelularClientesActionPerformed
-        // TODO add your handling code here:
+        registrarCliente();
     }//GEN-LAST:event_txfCelularClientesActionPerformed
 
     private void txfCelularClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfCelularClientesKeyReleased
@@ -9997,7 +10055,7 @@ public class VistaSGI extends javax.swing.JFrame {
     }//GEN-LAST:event_txfCelularClientesKeyTyped
 
     private void txfIdClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfIdClientesActionPerformed
-        // TODO add your handling code here:
+        registrarCliente();
     }//GEN-LAST:event_txfIdClientesActionPerformed
 
     private void txfIdClientesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfIdClientesKeyReleased
@@ -10419,7 +10477,7 @@ public class VistaSGI extends javax.swing.JFrame {
                 ind_5.setOpaque(true);
                 resetColor(new JPanel[]{btn_1, btn_2, btn_3, btn_4, btn_6, btn_7, btn_8, btn_10, btn_11}, new JPanel[]{ind_1, ind_2, ind_3, ind_4, ind_6, ind_7, ind_8, ind_10, ind_11});
                 parent.removeAll();
-                parent.add(IngresarEspecie);
+                parent.add(AlimentarInventario);
                 parent.repaint();
                 parent.revalidate();
                 java.util.Date fechaParseada = new SimpleDateFormat("dd/MM/yyyy").parse(fechaActual());
@@ -10584,6 +10642,7 @@ public class VistaSGI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JPanel AlimentarInventario;
     private javax.swing.JPanel ClientePanel;
     private javax.swing.JPanel ConductorPanel;
     public static javax.swing.JPanel ConsultarReserva;
@@ -10598,7 +10657,6 @@ public class VistaSGI extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> IdentificacionCombo;
     public static javax.swing.JComboBox<String> IdentificacionComboSalidas;
     public static javax.swing.JPanel InfoSalidaPanel;
-    public static javax.swing.JPanel IngresarEspecie;
     public static javax.swing.JPanel Inventario;
     public static javax.swing.JPanel ListarUsuario;
     private javax.swing.JLabel Logo;
@@ -12211,6 +12269,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
     public void registrarCliente() {
 
+        try {
         String cedula = txfIdClientes.getText().trim();
         String nombre = txfNombreClientes.getText().trim();
         long celular = Long.parseLong(txfCelularClientes.getText().trim());
@@ -12222,9 +12281,10 @@ public class VistaSGI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Cliente registrado correctamente.");
 
         } else {
-            JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente, inténtelo nuevamente.");
         }
-
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Revise su información, por favor.");
+        }
     }
 
     public void registrarClienteSalida() {

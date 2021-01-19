@@ -186,11 +186,11 @@ public final class SeleccionarReserva extends javax.swing.JFrame {
 
                             if (cedula.contains("-")) {
 
-                                VistaSGI.IdentificacionComboSalidas.setSelectedIndex(2);
+                                VistaSGI.IdentificacionComboSalidas.setSelectedIndex(1);
                                 VistaSGI.IdentificacionComboSalidas.setEnabled(false);
                             } else {
 
-                                VistaSGI.IdentificacionComboSalidas.setSelectedIndex(1);
+                                VistaSGI.IdentificacionComboSalidas.setSelectedIndex(0);
                                 VistaSGI.IdentificacionComboSalidas.setEnabled(false);
 
                             }
@@ -233,7 +233,12 @@ public final class SeleccionarReserva extends javax.swing.JFrame {
     }//GEN-LAST:event_txfBuscarConsultarReservasKeyReleased
 
     private void txfBuscarConsultarReservasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txfBuscarConsultarReservasKeyTyped
-        // TODO add your handling code here:
+       
+          if (txfBuscarConsultarReservas.getText().length() > 11) {
+
+            evt.consume();
+
+        }   
     }//GEN-LAST:event_txfBuscarConsultarReservasKeyTyped
 
     private void btnSeleccionarEspecieReservas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEspecieReservas4ActionPerformed

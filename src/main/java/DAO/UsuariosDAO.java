@@ -1,6 +1,7 @@
 package DAO;
 
 import Modelo.Usuario_;
+import Vista.VistaSGI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -158,7 +159,7 @@ public class UsuariosDAO {
         }
     }
 
-    public boolean actualizar(String usuario,String contraseña, String nombre, String apellido, long celular, String direccion) {
+    public boolean actualizar(String usuario, String contraseña, String nombre, String apellido, long celular, String direccion) {
 
         sSql = "UPDATE usuario SET nombre_usuario = '" + nombre + "',contraseña = '" + contraseña + "', apellido = '" + apellido + "'"
                 + ", celular = '" + celular + "', direccion = '" + direccion + "' WHERE usuario = '" + usuario + "'";
@@ -201,9 +202,13 @@ public class UsuariosDAO {
         }
         String sql = "";
 
-        sql = "SELECT * FROM usuario u WHERE (u.apellido LIKE  ('" + busca + "%') OR u.usuario LIKE ('" + busca + "%') OR u.nombre_usuario LIKE "
-                + "('" + busca + "%')) AND cargo != 'GERENTE' AND estado = 'ACTIVO'";
-
+        if (VistaSGI.cargo == 1) {
+            sql = "SELECT * FROM usuario u WHERE (u.apellido LIKE  ('" + busca + "%') OR u.usuario LIKE ('" + busca + "%') OR u.nombre_usuario LIKE "
+                    + "('" + busca + "%')) AND cargo != 'GERENTE' AND estado = 'ACTIVO'";
+        } else {
+            sql = "SELECT * FROM usuario u WHERE (u.apellido LIKE  ('" + busca + "%') OR u.usuario LIKE ('" + busca + "%') OR u.nombre_usuario LIKE "
+                    + "('" + busca + "%')) AND estado = 'ACTIVO'";
+        }
         try {
             Statement st = cn.createStatement();
 
