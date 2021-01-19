@@ -445,22 +445,22 @@ public final class SeleccionarEspecie extends javax.swing.JFrame implements Focu
 
         int filas = tabla.getRowCount();
         int cantidad_duplicada = 0;
-        int codigo_planta = 0;
+        int codigo_ingreso = 0;
         int bandera = 0;
 
         for (int i = 0; i < filas; i++) {
 
             if (InfoSalida.InfoSalidaPanel.isShowing()) {
 
-                codigo_planta = Integer.parseInt(tabla.getValueAt(i, 1).toString());
+                codigo_ingreso = Integer.parseInt(tabla.getValueAt(i, 1).toString());
                 bandera = 1;
             } else {
 
-                codigo_planta = Integer.parseInt(tabla.getValueAt(i, 0).toString());
+                codigo_ingreso = Integer.parseInt(tabla.getValueAt(i, 0).toString());
                 bandera = 0;
             }
 
-            if (codigo_planta == codigo) {
+            if (codigo_ingreso == codigo) {
 
                 if (bandera == 1) {
                     cantidad_duplicada = Integer.parseInt(tabla.getValueAt(i, 6).toString());
@@ -489,15 +489,16 @@ public final class SeleccionarEspecie extends javax.swing.JFrame implements Focu
                     cantidad += cantidad_duplicada;
                     limpiarTablaInventario();
                     DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-                    eliminarReservaConsultar(cantidad_duplicada, tamaño_bolsa, rango);
                     modelo.removeRow(i);
+                    eliminarReservaConsultar(cantidad_duplicada, codigo_ingreso, tamaño_bolsa, rango);
+                    System.out.println("Se eliminó la fila: " + i);
                     break;
                 } else {
                     cantidad += cantidad_duplicada;
                     limpiarTablaInventario();
                     DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-                    eliminarReserva(cantidad_duplicada, tamaño_bolsa, rango);
                     modelo.removeRow(i);
+                    eliminarReserva(cantidad_duplicada, codigo_ingreso, tamaño_bolsa, rango);
                     break;
 
                 }
@@ -583,13 +584,13 @@ public final class SeleccionarEspecie extends javax.swing.JFrame implements Focu
 
     }
 
-    public void eliminarReserva(int cantidad_duplicada, String tamaño_bolsa, String rango) {
+    public void eliminarReserva(int cantidad_duplicada, int codigo_ingreso, String tamaño_bolsa, String rango) {
 
         int codigo_reserva = Integer.parseInt(VistaSGI.lblNumeroReserva.getText().trim());
 
-        if (rDao.deshacerReserva(codigoIngreso, cantidad_duplicada, tamaño_bolsa, rango)) {
+        if (rDao.deshacerReserva(codigo_ingreso, cantidad_duplicada, tamaño_bolsa, rango)) {
 
-            if (rDao.eliminarReserva(codigo_reserva, cantidad_duplicada, tamaño_bolsa, rango)) {
+            if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad_duplicada, tamaño_bolsa, rango)) {
                 System.out.println("Se eliminó la reserva");
                 mostrarEspeciesReservadas();
             } else {
@@ -600,13 +601,14 @@ public final class SeleccionarEspecie extends javax.swing.JFrame implements Focu
         }
     }
     
-    public void eliminarReservaConsultar(int cantidad_duplicada, String tamaño_bolsa, String rango) {
+    public void eliminarReservaConsultar(int cantidad_duplicada, int codigo_ingreso, String tamaño_bolsa, String rango) {
 
         int codigo_reserva = Integer.parseInt(VistaSGI.txfCodigoReserva.getText().trim());
+        System.out.println("CÓDIGO DE RESERVA PARA ELIMINAR: " + codigo_reserva);
 
-        if (rDao.deshacerReserva(codigoIngreso, cantidad_duplicada, tamaño_bolsa, rango)) {
+        if (rDao.deshacerReserva(codigo_ingreso, cantidad_duplicada, tamaño_bolsa, rango)) {
 
-            if (rDao.eliminarReserva(codigo_reserva, cantidad_duplicada, tamaño_bolsa, rango)) {
+            if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad_duplicada, tamaño_bolsa, rango)) {
                 System.out.println("Se eliminó la reserva");
                 mostrarEspeciesConsultarReservadas();
             } else {
@@ -659,6 +661,8 @@ public final class SeleccionarEspecie extends javax.swing.JFrame implements Focu
             }
         } catch (ParseException ex) {
             System.out.println(ex.getMessage() + " Aquí fue");
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
         }
 
     }

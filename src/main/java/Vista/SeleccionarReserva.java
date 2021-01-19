@@ -215,6 +215,8 @@ public final class SeleccionarReserva extends javax.swing.JFrame {
 
             } catch (SQLException ex) {
                 Logger.getLogger(SeleccionarReserva.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception e) {
+                Logger.getLogger(e.getMessage());
             }
         }
     }//GEN-LAST:event_tablaReservasMouseReleased

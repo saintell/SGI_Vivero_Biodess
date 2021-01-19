@@ -8092,7 +8092,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
                 if (rDao.deshacerReserva(codigo_ingreso, cantidad, tamaño, rango)) {
 
-                    if (rDao.eliminarReserva(codigo_reserva, cantidad, tamaño, rango)) {
+                    if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad, tamaño, rango)) {
 
                         mostrarEspeciesReservadas();
                         calcularTotal();
@@ -8356,7 +8356,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
                 if (rDao.deshacerReserva(codigo_ingreso, cantidad, tamaño, rango)) {
 
-                    if (rDao.eliminarReserva(codigo_reserva, cantidad, tamaño, rango)) {
+                    if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad, tamaño, rango)) {
 
                         mostrarEspeciesConsultarReservas();
                         calcularTotalConsultarReservas();
@@ -11340,7 +11340,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
             if (rDao.deshacerReserva(codigo_ingreso, cantidad, tamaño, rango)) {
 
-                if (rDao.eliminarReserva(codigo_reserva, cantidad, tamaño, rango)) {
+                if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad, tamaño, rango)) {
 
                     calcularTotal();
 
@@ -11373,7 +11373,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
             if (rDao.deshacerReserva(codigo_ingreso, cantidad, tamaño, rango)) {
 
-                if (rDao.eliminarReserva(codigo_reserva, cantidad, tamaño, rango)) {
+                if (rDao.eliminarReserva(codigo_reserva, codigo_ingreso, cantidad, tamaño, rango)) {
 
                     calcularTotalConsultarReservas();
 
@@ -12422,6 +12422,7 @@ public class VistaSGI extends javax.swing.JFrame {
 
             } else {
 
+                reiniciarListaReservas();
                 ventanaCodigos.setVisible(true);
 
                 DefaultTableModel modelo;
@@ -12437,6 +12438,14 @@ public class VistaSGI extends javax.swing.JFrame {
 
         }
 
+    }
+    
+    public void reiniciarListaReservas() {
+        
+         DefaultTableModel modelo = (DefaultTableModel) ventanaCodigos.tablaCodigosReservas.getModel();
+        while (modelo.getRowCount() > 0) {
+            modelo.removeRow(0);
+        }
     }
 
     public void buscarSalidas() {

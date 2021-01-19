@@ -143,9 +143,9 @@ public class ReservasDAO {
         }
     }
 
-    public boolean eliminarReserva(int codigo_reserva, int cantidad, String tamaño_bolsa, String rango) {
+    public boolean eliminarReserva(int codigo_reserva, int codigo_ingreso, int cantidad, String tamaño_bolsa, String rango) {
 
-        sSql = "DELETE FROM reserva WHERE codigo_reserva = '" + codigo_reserva + "' AND tamaño_bolsa = '" + tamaño_bolsa + "'"
+        sSql = "DELETE FROM reserva WHERE codigo_reserva = '" + codigo_reserva + "' AND codigo_planta = '" + codigo_ingreso + "' AND tamaño_bolsa = '" + tamaño_bolsa + "'"
                 + " AND rango = '" + rango + "' AND cantidad = '" + cantidad + "'";
 
         try {
@@ -191,7 +191,7 @@ public class ReservasDAO {
         };
 
         sSql = "SELECT * FROM reserva r, ingreso_planta i, planta p WHERE r.codigo_reserva != 0 AND r.codigo_reserva = ' " + codigo + "' AND"
-                + " r.codigo_planta = i.codigo_ingreso AND i.codigo_planta = p.codigo_planta";
+                + " r.codigo_planta = i.codigo_ingreso AND i.codigo_planta = p.codigo_planta ORDER BY i.codigo_ingreso";
 
         try {
             Statement st = cn.createStatement();
@@ -242,7 +242,7 @@ public class ReservasDAO {
             sSql = "SELECT r.codigo_reserva, to_char(r.fecha_apertura, 'DD/MM/YYYY') AS fecha, c.nombre, r.id_cliente FROM reserva r, cliente c WHERE r.id_cliente = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null"
                     + " OR r.codigo_reserva != 0 AND r.codigo_reserva = '" + busca + "' AND r.id_cliente = c.id_cliente AND r.fecha_cierre is null GROUP BY r.codigo_reserva, r.fecha_apertura, c.nombre, r.id_cliente ORDER BY r.codigo_reserva ASC";
         }
-        
+
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sSql);

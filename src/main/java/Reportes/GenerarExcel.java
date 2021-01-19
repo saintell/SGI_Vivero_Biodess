@@ -161,7 +161,7 @@ public class GenerarExcel {
             i++;
         }
 
-        subCabecera.createCell(1).setCellValue("VIVERO SAN EMIGDIO - Fecha: " + fechaActual());
+        subCabecera.createCell(1).setCellValue("VIVERO BIODESS - Fecha: " + fechaActual());
 
         for (int j = 2; j <= 10; j++) {
             subCabecera.createCell(j).setCellValue("");
@@ -246,7 +246,7 @@ public class GenerarExcel {
 
         Row subCabecera = sheet.createRow(1);
         sheet.addMergedRegion(new CellRangeAddress(1, 1, 1, 10));
-        subCabecera.createCell(1).setCellValue("VIVERO SAN EMIGDIO - Fecha: " + fechaActual());
+        subCabecera.createCell(1).setCellValue("VIVERO BIODESS - Fecha: " + fechaActual());
         for (int i = 2; i <= 10; i++) {
             subCabecera.createCell(i).setCellValue("Fecha: ");
         }
@@ -412,6 +412,9 @@ public class GenerarExcel {
 
         }
 
+        ResultSet rs2 = sDao.buscarExcelSalidaTyP(desde, hasta);
+        
+        
         Row cabecera2 = sheet.createRow(i + 1);
         sheet.addMergedRegion(new CellRangeAddress(i + 1, i + 1, 1, 11));
         cabecera2.createCell(1).setCellValue("PÉRDIDAS Y TRASPLANTADOS ENTRE " + fechaInicio + " Y " + fechaFin);
@@ -427,7 +430,6 @@ public class GenerarExcel {
         Row subCabecera2 = sheet.createRow(i + 2);
         sheet.addMergedRegion(new CellRangeAddress(i + 2, i + 2, 1, 11));
 
-        ResultSet rs2 = sDao.buscarExcelSalidaTyP(desde, hasta);
 
         i += 4;
         totalMaterial = 0;
@@ -634,7 +636,7 @@ public class GenerarExcel {
             rows.createCell((short) 8).setCellValue(rs1.getString("celular"));
             rows.createCell((short) 9).setCellValue(rs1.getInt("id_conductor"));
             rows.createCell((short) 10).setCellValue(rs1.getString("nombreco"));
-            rows.createCell((short) 11).setCellValue(rs1.getInt("celularco"));
+            rows.createCell((short) 11).setCellValue(rs1.getLong("celularco"));
 
             for (int j = 1; j <= 11; j++) {
 
