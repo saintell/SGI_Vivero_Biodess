@@ -40,10 +40,9 @@ public class Main {
 
             } else {
 
-//                Login login = new Login();
-//                login.setVisible(true);
-                VistaSGI vista = new VistaSGI();
-                vista.setVisible(true);
+                Login login = new Login();
+                login.setVisible(true);
+
             }
         } catch (SQLException ex) {
 
